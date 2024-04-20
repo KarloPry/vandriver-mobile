@@ -7,7 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-export default function LoginRoute({navigation}) {
+export default function LoginRoute({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -53,8 +53,28 @@ export default function LoginRoute({navigation}) {
             alignContent: "center",
             alignItems: "center",
           }}
+          onPress={() => {
+            navigation.navigate("DriverTab");
+          }}
         >
-          <Text style={{ color: "white", fontSize: 22 }}>Iniciar sesión</Text>
+          <Text style={{ color: "white", fontSize: 28 }}>Iniciar sesión</Text>
+        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text>¿No tienes cuenta? </Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Signup");
+          }}
+        >
+          <Text>Registrarse</Text>
         </TouchableOpacity>
       </View>
     </View>
